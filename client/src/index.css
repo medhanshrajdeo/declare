@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input, textarea {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+}
+
+.card-tilt {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.card-tilt:hover {
+  transform: translateY(-8px);
+}
+
+@keyframes deal-in {
+  from { transform: translateY(20px) scale(0.9); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.deal-in { animation: deal-in 250ms ease forwards; }
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.55); }
+  70% { box-shadow: 0 0 0 12px rgba(250, 204, 21, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+}
+.turn-ring { animation: pulse-ring 1.6s infinite; }
+
+.felt-bg {
+  background:
+    radial-gradient(ellipse at center, #1a6b40 0%, #0c4a2a 60%, #053019 100%);
+}
+.dark .felt-bg {
+  background:
+    radial-gradient(ellipse at center, #134a30 0%, #082818 60%, #021510 100%);
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(120,120,120,0.4); border-radius: 4px; }

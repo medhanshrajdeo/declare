@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "PowerShell(Start-Sleep -Seconds 5; try { $r = Invoke-WebRequest -Uri http://localhost:5000/health -UseBasicParsing -TimeoutSec 5; \"SERVER $\\($r.StatusCode\\): $\\($r.Content\\)\" } catch { \"SERVER ERR: $_\" }; try { $r2 = Invoke-WebRequest -Uri http://localhost:3000 -UseBasicParsing -TimeoutSec 5; \"CLIENT $\\($r2.StatusCode\\): $\\($r2.Content.Length\\) bytes\" } catch { \"CLIENT ERR: $_\" })",
+      "PowerShell(npm *)"
+    ]
+  }
+}
