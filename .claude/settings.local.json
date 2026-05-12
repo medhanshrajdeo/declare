@@ -3,7 +3,33 @@
     "allow": [
       "Bash(npm install *)",
       "PowerShell(Start-Sleep -Seconds 5; try { $r = Invoke-WebRequest -Uri http://localhost:5000/health -UseBasicParsing -TimeoutSec 5; \"SERVER $\\($r.StatusCode\\): $\\($r.Content\\)\" } catch { \"SERVER ERR: $_\" }; try { $r2 = Invoke-WebRequest -Uri http://localhost:3000 -UseBasicParsing -TimeoutSec 5; \"CLIENT $\\($r2.StatusCode\\): $\\($r2.Content.Length\\) bytes\" } catch { \"CLIENT ERR: $_\" })",
-      "PowerShell(npm *)"
+      "PowerShell(npm *)",
+      "PowerShell(npm list *)",
+      "PowerShell(railway logs *)",
+      "Bash(railway deployment *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d[0]['status']\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('STATUS:', d[0]['status']\\)\")",
+      "Bash(git -C C:\\\\TAMU\\\\declare status)",
+      "Bash(git -C C:\\\\TAMU\\\\declare diff --stat)",
+      "Bash(where railway *)",
+      "Bash(railway status *)",
+      "Bash(railway domain *)",
+      "Bash(railway logs *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} in %{time_total}s\\\\n\" https://declare-server-production.up.railway.app/health)",
+      "Bash(curl -s https://declare-server-production.up.railway.app/health)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(where vercel.cmd)",
+      "Bash(where vercel *)",
+      "Bash(npx --no-install vercel --version)",
+      "Bash(vercel whoami *)",
+      "Bash(VITE_SERVER_URL=https://declare-server-production.up.railway.app npm run build)",
+      "Bash(vercel link *)",
+      "Bash(vercel env *)",
+      "Bash(vercel deploy *)",
+      "Bash(railway variables *)",
+      "Bash(curl -s -o /dev/null -w \"VERCEL: %{http_code}\\\\n\" https://declare-client.vercel.app)",
+      "Bash(curl -s -H \"Origin: https://declare-client.vercel.app\" -w \"\\\\nRAILWAY-cors: %{http_code}\\\\n\" https://declare-server-production.up.railway.app/health)"
     ]
   }
 }
